@@ -1,4 +1,4 @@
-const Friend = ({ picture, pos, setSelectedImg }) => {
+const Friend = ({ picture, pos, setSelectedImg, isFullWidth }) => {
     let styles = "w-full cursor-pointer transition-transform duration-300 size-img ";
 
     if (pos === 7) styles += "rounded-bl-2xl ";
@@ -6,7 +6,7 @@ const Friend = ({ picture, pos, setSelectedImg }) => {
 
     return (
         <img
-            className={styles}
+            className={isFullWidth ? (styles + 'col-span-3') : styles}
             src={picture}
             alt="Friend"
             onClick={() => setSelectedImg(picture)}
